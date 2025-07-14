@@ -1,0 +1,19 @@
+ A solução agora consiste em:
+
+
+   * docker-compose.yml: Orquestra todos os serviços.
+   * Dockerfile: Define a imagem Docker para a aplicação Python.
+   * requirements.txt: Lista as dependências Python.
+   * nginx/nginx.conf: Configuração do Nginx como load balancer.
+   * app/main.py: A API FastAPI principal que recebe os pagamentos.
+   * app/worker.py: O worker que processa os pagamentos da fila do Redis.
+   * app/health_checker.py: O serviço que monitora a saúde dos processadores de pagamento.
+
+  Para rodar a solução, o usuário precisará:
+
+
+   1. Ter o Docker e o Docker Compose instalados.
+   2. Subir primeiro o docker-compose.yml dos Payment Processors para criar a rede externa.
+   3. Executar docker-compose up --build no diretório /home/rodrix/rinha202t5.
+
+  Isso iniciará todos os serviços, e a API estará disponível na porta 9999.
